@@ -1,4 +1,4 @@
-import checkStrikeandBall from "./compareN";
+//import checkStrikeandBall from "./compareN";
 export default userArray;
 
 //input 확인
