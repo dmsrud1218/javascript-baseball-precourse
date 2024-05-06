@@ -1,6 +1,4 @@
-//import randomNum from "./randomnums";
-//import checkN from "./checkinput";
-//import replay from "./replay";
+
 
 let answer = []; // 정답을 저장할 배열
 
@@ -17,25 +15,24 @@ function generateRandomNumbers() {
 }
 
 
-// 사용자가 입력한 숫자 확인
+//input 확인
 function checkNumbers() {
-  const input = document.getElementById("input").value; // 입력값 가져오기
+  const input = document.getElementById("input").value; 
   if (new Set(input).size !== 3 || input.includes("0") || input.length !== 3) {
     alert("잘못된 입력입니다. 중복없이 1~9까지의 숫자를 입력해주세요.");
     return;
   }
   
-  //console.log("왜 출력안돼sd?");
   let strikes = 0;
   let balls = 0;
   const inputNumbers = input.split("");
   answer.forEach((number, index) => {
     if (number === inputNumbers[index]) {
       strikes++;
-      //alert("strike추가");
+      
     } else if (inputNumbers.includes(number)) {
       balls++;
-      //alert("ball추가");
+      
     }
   });
 
@@ -59,13 +56,13 @@ function checkNumbers() {
 function replay() {
   answer = generateRandomNumbers().split(""); // 정답 생성 및 배열로 변환
   document.getElementById("input").value = ""; // 입력 필드 초기화
-  //document.getElementById("answer").innerText = answer;
+  
 }
 
 // 게임 초기화 및 시작
 window.onload = function () {
   answer = generateRandomNumbers().split(""); // 정답 생성 및 배열로 변환
-  //document.getElementById("answer").innerText = answer;
+  
 };
 
 // HTML 내에서 함수를 참조할 수 있도록 window 객체에 할당
